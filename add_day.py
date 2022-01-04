@@ -31,6 +31,9 @@ def create_template(day):
 
 def create_day(day, template):
     day_dir = pathlib.Path(f"src/bin/day{int(day):02}")
+    if day_dir.exists():
+        return
+
     day_dir.mkdir(parents=True, exist_ok=True)
 
     pathlib.Path(day_dir/"input.txt").touch()
