@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 argparse = { version = "0.2.2" }
 itertools = { version = "0.10.3" }
+regex = { version = "1.5.4" }
