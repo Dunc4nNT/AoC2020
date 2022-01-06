@@ -71,7 +71,7 @@ fn get_slopes_part2() -> Vec<Coordinates> {
 }
 
 fn main() {
-    let input = include_str!("input.txt");
+    let input: &str = include_str!("input.txt");
 
     println!("Day 3, Part 1: {:?}", part1(input, Coordinates{x:3, y:1}));
     println!("Day 3, Part 2: {:?}", part2(input));

@@ -30,7 +30,7 @@ fn part2(input: &str) -> i32 {
 }
 
 fn main() {
-    let input = include_str!("input.txt");
+    let input: &str = include_str!("input.txt");
 
     println!("Day 1, Part 1: {:?}", part1(input));
     println!("Day 1, Part 2: {:?}", part2(input));
