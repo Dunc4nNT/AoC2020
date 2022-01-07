@@ -2,8 +2,8 @@ use itertools::Itertools;
 
 fn process_data(input: &str) -> Vec<i64> {
     input.lines()
-    .filter_map(|s| s.parse().ok())
-    .collect()
+        .filter_map(|i| i.parse().ok())
+        .collect()
 }
 
 fn check_sum(numbers: Vec<i64>, num: i64) -> bool {
@@ -23,8 +23,7 @@ fn get_bad_num(data: Vec<i64>, size: usize) -> i64 {
         last_25.push(data[i]);
     }
 
-    let start: usize = size;
-    for i in start..data.len() {
+    for i in size..data.len() {
         if check_sum(last_25.clone(), data[i]) {
             last_25.remove(0);
             last_25.push(data[i]);
@@ -50,7 +49,7 @@ fn part2(input: &str, size: usize) -> i64 {
     let bad_num = get_bad_num(data.clone(), size);
     let mut result: i64 = 0;
 
-    for i in 3..size {
+    for i in 3..size+1 {
         for window in data.windows(i) {
             let sum: i64 = window.iter().sum();
             if sum == bad_num {
