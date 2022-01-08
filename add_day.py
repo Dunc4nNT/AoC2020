@@ -33,7 +33,6 @@ def create_day(day, template):
 
     bin_file = pathlib.Path("src/bin.rs")
     if not bin_file.is_file():
-        print("fuck")
         with open(bin_file, "w") as fp:
             fp.write(BIN_TEMPLATE)
 
