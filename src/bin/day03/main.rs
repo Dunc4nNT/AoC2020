@@ -1,3 +1,5 @@
+use std::time::Instant;
+
 struct Coordinates {
     x: usize,
     y: usize
@@ -73,6 +75,12 @@ fn get_slopes_part2() -> Vec<Coordinates> {
 fn main() {
     let input: &str = include_str!("input.txt");
 
-    println!("Day 3, Part 1: {:?}", part1(input, Coordinates{x:3, y:1}));
-    println!("Day 3, Part 2: {:?}", part2(input));
+    let time1 = Instant::now();
+    let solution1 = part1(input, Coordinates{x:3, y:1});
+    let elapsed1 = time1.elapsed();
+    println!("Day 3, Part 1: {:?} ({:?})", solution1, elapsed1);
+    let time2 = Instant::now();
+    let solution2 = part2(input);
+    let elapsed2 = time2.elapsed();
+    println!("Day 3, Part 2: {:?} ({:?})", solution2, elapsed2);
 }

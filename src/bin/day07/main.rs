@@ -1,4 +1,4 @@
-use std::collections::{HashMap, VecDeque, HashSet};
+use std::{collections::{HashMap, VecDeque, HashSet}, time::Instant};
 use regex::Regex;
 
 fn process_data(input: &str) -> HashMap<String, Vec<(String, i32)>> {
@@ -68,6 +68,12 @@ fn part2(input: &str) -> i32 {
 fn main() {
     let input: &str = include_str!("input.txt");
 
-    println!("Day 7, Part 1: {:?}", part1(input));
-    println!("Day 7, Part 2: {:?}", part2(input));
+    let time1 = Instant::now();
+    let solution1 = part1(input);
+    let elapsed1 = time1.elapsed();
+    println!("Day 7, Part 1: {:?} ({:?})", solution1, elapsed1);
+    let time2 = Instant::now();
+    let solution2 = part2(input);
+    let elapsed2 = time2.elapsed();
+    println!("Day 7, Part 2: {:?} ({:?})", solution2, elapsed2);
 }

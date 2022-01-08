@@ -1,3 +1,4 @@
+use std::time::Instant;
 use itertools::Itertools;
 
 fn process_data(input: &str) -> Vec<i64> {
@@ -68,6 +69,12 @@ fn main() {
     let input: &str = include_str!("input.txt");
     let size: usize = 25;
 
-    println!("Day 9, Part 1: {:?}", part1(input, size));
-    println!("Day 9, Part 2: {:?}", part2(input, size));
+    let time1 = Instant::now();
+    let solution1 = part1(input, size);
+    let elapsed1 = time1.elapsed();
+    println!("Day 9, Part 1: {:?} ({:?})", solution1, elapsed1);
+    let time2 = Instant::now();
+    let solution2 = part2(input, size);
+    let elapsed2 = time2.elapsed();
+    println!("Day 9, Part 2: {:?} ({:?})", solution2, elapsed2);
 }
